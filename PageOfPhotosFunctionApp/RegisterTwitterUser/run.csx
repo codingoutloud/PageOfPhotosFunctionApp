@@ -13,12 +13,12 @@ public static void Run(HttpRequestMessage req, out PageRef pageRef, TraceWriter 
 
     var isAuth = ((System.Security.Claims.ClaimsPrincipal) (System.Threading.Thread.CurrentPrincipal)).Identity.IsAuthenticated;
 
-    log.Info("Is Authenticated? {isAuth}");
+    log.Info($"Is Authenticated? {isAuth}");
 
 #if DEBUG
     foreach (var claim in claims)
     {
-        log.Info("Claim '{claim.Type}' = '{claim.Value}'");
+        log.Info($"Claim '{claim.Type}' = '{claim.Value}'");
     }
 #endif
 
